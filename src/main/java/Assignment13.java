@@ -1,12 +1,10 @@
 /*
- *  UCF COP3330 Fall 2021 Assignment 14 Solution
+ *  UCF COP3330 Fall 2021 Assignment 13 Solution
  *  Copyright 2021 jeremiah pike
  */
 
 
-
 import java.util.Calendar;
-import java.util.Objects;
 import java.util.Scanner;
 
 class Main {
@@ -16,28 +14,28 @@ class Main {
 
         Scanner input1 = new Scanner(System.in);
 
-        System.out.println("Enter the state: ");
-        String state = input1.nextLine();
+        System.out.println("Enter the principal: ");
+        int p = input1.nextInt();
 
-        System.out.println("Enter the amount: ");
-        double amount = input1.nextDouble();
+        System.out.println("Enter the interest rate: ");
+        double r = input1.nextDouble();
 
-        double tax = amount * 0.055;
+        System.out.println("Enter the years: ");
+        int t = input1.nextInt();
 
-        if (Objects.equals(state, "WI")) {
-            System.out.printf("The tax is: " + (tax) + "\r\n");
+        System.out.println("Enter how many times per year it is compounded: ");
+        int n = input1.nextInt();
 
-            System.out.printf("The total is: " + (tax + amount) + "\r\n");
-        } else {
-            System.out.printf("The total is: " + (amount) + "\r\n");
-        }
+        int rate = (int) (r/100);
+        int number = (p*(1+((rate/100)/n)));
+        int power = (n*t);
+        double interest = (number ^ power);
+
+        System.out.printf("After " + t + " years, the investment will be worth: " + (p + interest) + "dollars");
+
+
+
+
+
     }
-
-
-
-
-
-
-
-
 }
